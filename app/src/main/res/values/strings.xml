@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Marvel</string>
+
+    <string name="private_key">6f2949000f6bbef34be364e0ed49795714ea88f4</string>
+    <string name="public_key">6d923a3ce3e227199e17c1ea42401f0a</string>
+    <string name="marvel_url">https://gateway.marvel.com:443/v1/public</string>
+    <string name="name_hero">You hero</string>
+    <string name="my_prefer_hero">Iron</string>
+    <string name="confirm_search_name">OK</string>
+    <string name="title_hero_screen">Heros</string>
+    <string name="subtitle_hero_screen">Subtitle</string>
+    <string name="tab_item_comics">Quadrinhos</string>
+    <string name="tab_item_series">Séries</string>
+    <string name="tab_item_stories">Histórias</string>
+    <string name="tab_item_events">Eventos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hero_description_not_existe">There is no description for the hero!</string>
+    <string name="comic_description_not_existe">There is no description for the comic!</string>
+    <string name="serie_description_not_existe">There is no description for the serie!</string>
+    <string name="events_description_not_existe">There is no description for the events!</string>
+    <string name="marvel_name">Marvel</string>
+
+</resources>

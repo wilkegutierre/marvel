@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.actSearchHeros">
+
+    <include
+        android:id="@+id/tbMarvel"
+        layout="@layout/marvel_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/layoutInputHero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp">
+
+        <EditText
+            android:id="@+id/edtSearchNameHero"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_input_hero"
+            android:hint="@string/name_hero"
+            android:inputType="textCapCharacters"
+            android:paddingLeft="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey" />
+
+        <ImageView
+            android:id="@+id/imvSearchHeroByName"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/search_name" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlHeros"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHeros"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+
+</LinearLayout>

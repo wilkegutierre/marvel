@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_hero"
+        android:icon="@drawable/superhero_icon"
+        android:orderInCategory="0"
+        android:iconTint="@color/white"
+        android:title="+"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_comics"
+        android:icon="@drawable/comics_icon"
+        android:orderInCategory="0"
+        android:iconTint="@color/white"
+        android:title="+"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_series"
+        android:icon="@drawable/series_icon"
+        android:orderInCategory="1"
+        android:iconTint="@color/white"
+        android:title="+"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_stories"
+        android:icon="@drawable/stories_icon"
+        android:orderInCategory="1"
+        android:title="+"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_events"
+        android:icon="@drawable/events_icon"
+        android:orderInCategory="1"
+        android:title="+"
+        app:showAsAction="always" />
+</menu>
