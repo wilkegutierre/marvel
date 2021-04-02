@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/ic_background"
     android:orientation="vertical"
     tools:context=".ui.actSearchHeros">
 
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:background="@color/white"
+        android:background="@android:color/transparent"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingLeft="5dp"
@@ -49,8 +49,7 @@
         android:id="@+id/rlHeros"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:background="@color/white">
+        android:background="@android:color/transparent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvHeros"

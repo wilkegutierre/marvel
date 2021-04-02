@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.marvel.R
 import com.example.marvel.adapter.adpMarvelHeros
 import com.example.marvel.data.MapLoadHeros
+import com.example.marvel.service.InternetConnection
 import com.example.marvel.service.MarvelConnections
 import com.example.marvel.utils.MarvelHashCode
 import kotlinx.android.synthetic.main.act_search_heros.*
@@ -26,30 +27,48 @@ class actSearchHeros : AppCompatActivity() {
         var timestamp: Long = System.currentTimeMillis()
         if (savedInstanceState == null) {
             imvSearchHeroByName.setOnClickListener {
-                loadRecyclerView(
-                    MapLoadHeros().loadHeros(
-                        MarvelConnections()
-                            .connCharactereByName(
-                                edtSearchNameHero.text.toString(),
-                                timestamp.toString(),
-                                MarvelHashCode().marvelHash(timestamp)
-                            ),
-                    this
+                if (InternetConnection().internetOnline(this)) {
+                    loadRecyclerView(
+                        MapLoadHeros().loadHeros(
+                            MarvelConnections()
+                                .connCharactereByName(
+                                    edtSearchNameHero.text.toString(),
+                                    timestamp.toString(),
+                                    MarvelHashCode().marvelHash(timestamp)
+                                ),
+                            this
+                        )
                     )
-                )
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Não há conecxão com a internet!",
+                        Toast.LENGTH_LONG
+                    )
+                        .show()
+                }
             }
         }
 
-        loadRecyclerView(
-            MapLoadHeros().loadHeros(
-                MarvelConnections().connCharactereByName(
-                    getString(R.string.my_prefer_hero),
-                    timestamp.toString(),
-                    MarvelHashCode().marvelHash(timestamp)
-                ),
-                this
+        if (InternetConnection().internetOnline(this)) {
+            loadRecyclerView(
+                MapLoadHeros().loadHeros(
+                    MarvelConnections().connCharactereByName(
+                        getString(R.string.my_prefer_hero),
+                        timestamp.toString(),
+                        MarvelHashCode().marvelHash(timestamp)
+                    ),
+                    this
+                )
             )
-        )
+        } else {
+                Toast.makeText(
+                    this,
+                    "Não há conecxão com a internet!",
+                    Toast.LENGTH_LONG
+                )
+                    .show()
+            }
     }
 
     fun loadRecyclerView(heros: ArrayList<Map<String, Any>>) {
