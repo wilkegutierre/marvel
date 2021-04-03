@@ -30,7 +30,7 @@
             android:layout_marginLeft="6dp"
             android:layout_weight="1"
             android:background="@drawable/border_input_hero"
-            android:hint="@string/name_hero"
+            android:hint="@string/name_you_hero"
             android:inputType="textCapCharacters"
             android:paddingLeft="10dp"
             android:textColor="@color/black"

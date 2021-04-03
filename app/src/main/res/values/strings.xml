@@ -4,7 +4,7 @@
     <string name="private_key">6f2949000f6bbef34be364e0ed49795714ea88f4</string>
     <string name="public_key">6d923a3ce3e227199e17c1ea42401f0a</string>
     <string name="marvel_url">https://gateway.marvel.com:443/v1/public</string>
-    <string name="name_hero">You hero</string>
+    <string name="name_you_hero">Enter your hero</string>
     <string name="my_prefer_hero">Iron</string>
     <string name="confirm_search_name">OK</string>
     <string name="title_hero_screen">Heros</string>
@@ -21,5 +21,11 @@
     <string name="serie_description_not_existe">There is no description for the serie!</string>
     <string name="events_description_not_existe">There is no description for the events!</string>
     <string name="marvel_name">Marvel</string>
+    <string name="internet_connection">You are not connected to the internet!</string>
+    <string name="internet_connection_not_detect">Connection not detected!</string>
+    <string name="activate_internet_connection">
+        Internet connection not detected.
+        Activate wifi or mobile data.</string>
+    <string name="confirm_internet_not_found">Ok</string>
 
 </resources>

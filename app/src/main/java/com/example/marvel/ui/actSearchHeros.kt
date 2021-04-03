@@ -10,6 +10,7 @@ import com.example.marvel.adapter.adpMarvelHeros
 import com.example.marvel.data.MapLoadHeros
 import com.example.marvel.service.InternetConnection
 import com.example.marvel.service.MarvelConnections
+import com.example.marvel.utils.DialogInternetConnection
 import com.example.marvel.utils.MarvelHashCode
 import kotlinx.android.synthetic.main.act_search_heros.*
 import kotlinx.android.synthetic.main.marvel_toolbar.*
@@ -27,7 +28,7 @@ class actSearchHeros : AppCompatActivity() {
         var timestamp: Long = System.currentTimeMillis()
         if (savedInstanceState == null) {
             imvSearchHeroByName.setOnClickListener {
-                if (InternetConnection().internetOnline(this)) {
+                if (InternetConnection().isOnline(this)) {
                     loadRecyclerView(
                         MapLoadHeros().loadHeros(
                             MarvelConnections()
@@ -50,7 +51,7 @@ class actSearchHeros : AppCompatActivity() {
             }
         }
 
-        if (InternetConnection().internetOnline(this)) {
+        if (InternetConnection().isOnline(this)) {
             loadRecyclerView(
                 MapLoadHeros().loadHeros(
                     MarvelConnections().connCharactereByName(
@@ -62,13 +63,11 @@ class actSearchHeros : AppCompatActivity() {
                 )
             )
         } else {
-                Toast.makeText(
-                    this,
-                    "Não há conecxão com a internet!",
-                    Toast.LENGTH_LONG
-                )
-                    .show()
-            }
+            DialogInternetConnection().internetNotFound(
+                this,
+                getString(R.string.internet_connection_not_detect),
+                getString(R.string.activate_internet_connection))
+        }
     }
 
     fun loadRecyclerView(heros: ArrayList<Map<String, Any>>) {
